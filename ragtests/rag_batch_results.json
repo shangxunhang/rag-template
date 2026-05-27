@@ -1,0 +1,172 @@
+[
+  {
+    "query": "FAISS 是什么？",
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "score": 0.3940810561180115,
+        "chunk_id": "doc_003_chunk_0000",
+        "doc_id": "doc_003",
+        "source": "doc_003.txt",
+        "chunk_index": 0,
+        "text": "FAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。"
+      },
+      {
+        "rank": 2,
+        "score": 0.3234478533267975,
+        "chunk_id": "doc_001_chunk_0000",
+        "doc_id": "doc_001",
+        "source": "doc_001.txt",
+        "chunk_index": 0,
+        "text": "RAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。"
+      },
+      {
+        "rank": 3,
+        "score": 0.17791099846363068,
+        "chunk_id": "doc_002_chunk_0000",
+        "doc_id": "doc_002",
+        "source": "doc_002.txt",
+        "chunk_index": 0,
+        "text": "Embedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。"
+      }
+    ],
+    "prompt": "你是一个严谨的知识库问答助手。\n\n请只根据【资料】回答【问题】。\n如果资料中没有足够信息，请回答：“资料中没有足够信息。”\n不要编造资料中不存在的内容。\n\n【资料】\n[资料 1]\nsource: doc_003.txt\nchunk_id: doc_003_chunk_0000\nscore: 0.3941\ncontent:\nFAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。\n\n================================================================================\n\n[资料 2]\nsource: doc_001.txt\nchunk_id: doc_001_chunk_0000\nscore: 0.3234\ncontent:\nRAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。\n\n================================================================================\n\n[资料 3]\nsource: doc_002.txt\nchunk_id: doc_002_chunk_0000\nscore: 0.1779\ncontent:\nEmbedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。\n\n【问题】\nFAISS 是什么？\n\n【回答要求】\n1. 回答必须基于资料。\n2. 回答要简洁、准确。\n3. 回答后列出引用来源 chunk_id。\n",
+    "answer": "FAISS 是 Facebook AI Research 开源的向量检索库。它主要用于保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。FAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。"
+  },
+  {
+    "query": "什么是向量索引？",
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "score": 0.4672406315803528,
+        "chunk_id": "doc_001_chunk_0000",
+        "doc_id": "doc_001",
+        "source": "doc_001.txt",
+        "chunk_index": 0,
+        "text": "RAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。"
+      },
+      {
+        "rank": 2,
+        "score": 0.44931069016456604,
+        "chunk_id": "doc_002_chunk_0000",
+        "doc_id": "doc_002",
+        "source": "doc_002.txt",
+        "chunk_index": 0,
+        "text": "Embedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。"
+      },
+      {
+        "rank": 3,
+        "score": 0.4284557104110718,
+        "chunk_id": "doc_003_chunk_0000",
+        "doc_id": "doc_003",
+        "source": "doc_003.txt",
+        "chunk_index": 0,
+        "text": "FAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。"
+      }
+    ],
+    "prompt": "你是一个严谨的知识库问答助手。\n\n请只根据【资料】回答【问题】。\n如果资料中没有足够信息，请回答：“资料中没有足够信息。”\n不要编造资料中不存在的内容。\n\n【资料】\n[资料 1]\nsource: doc_001.txt\nchunk_id: doc_001_chunk_0000\nscore: 0.4672\ncontent:\nRAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。\n\n================================================================================\n\n[资料 2]\nsource: doc_002.txt\nchunk_id: doc_002_chunk_0000\nscore: 0.4493\ncontent:\nEmbedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。\n\n================================================================================\n\n[资料 3]\nsource: doc_003.txt\nchunk_id: doc_003_chunk_0000\nscore: 0.4285\ncontent:\nFAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。\n\n【问题】\n什么是向量索引？\n\n【回答要求】\n1. 回答必须基于资料。\n2. 回答要简洁、准确。\n3. 回答后列出引用来源 chunk_id。\n",
+    "answer": "向量索引是一种数据结构，用于存储和快速检索大量嵌入向量的数据集。在 RAG（Retrieval-Augmented Generation）系统中，向量索引被用来保存文档 chunk 的嵌入向量，并根据用户的查询向量进行快速检索，从而提高搜索效率和准确性。引用来源为 [资料 3]。"
+  },
+  {
+    "query": "RAG 是什么？",
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "score": 0.7284045219421387,
+        "chunk_id": "doc_001_chunk_0000",
+        "doc_id": "doc_001",
+        "source": "doc_001.txt",
+        "chunk_index": 0,
+        "text": "RAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。"
+      },
+      {
+        "rank": 2,
+        "score": 0.3678251802921295,
+        "chunk_id": "doc_002_chunk_0000",
+        "doc_id": "doc_002",
+        "source": "doc_002.txt",
+        "chunk_index": 0,
+        "text": "Embedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。"
+      },
+      {
+        "rank": 3,
+        "score": 0.24056002497673035,
+        "chunk_id": "doc_003_chunk_0000",
+        "doc_id": "doc_003",
+        "source": "doc_003.txt",
+        "chunk_index": 0,
+        "text": "FAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。"
+      }
+    ],
+    "prompt": "你是一个严谨的知识库问答助手。\n\n请只根据【资料】回答【问题】。\n如果资料中没有足够信息，请回答：“资料中没有足够信息。”\n不要编造资料中不存在的内容。\n\n【资料】\n[资料 1]\nsource: doc_001.txt\nchunk_id: doc_001_chunk_0000\nscore: 0.7284\ncontent:\nRAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。\n\n================================================================================\n\n[资料 2]\nsource: doc_002.txt\nchunk_id: doc_002_chunk_0000\nscore: 0.3678\ncontent:\nEmbedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。\n\n================================================================================\n\n[资料 3]\nsource: doc_003.txt\nchunk_id: doc_003_chunk_0000\nscore: 0.2406\ncontent:\nFAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。\n\n【问题】\nRAG 是什么？\n\n【回答要求】\n1. 回答必须基于资料。\n2. 回答要简洁、准确。\n3. 回答后列出引用来源 chunk_id。\n",
+    "answer": "RAG 是 Retrieval-Augmented Generation（检索增强生成）的缩写，是一种将外部知识库与大模型生成答案相结合的方法。它适用于企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。资料来源包括 [资料 1]、[资料 2] 和 [资料 3]。"
+  },
+  {
+    "query": "Embedding 是什么？",
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "score": 0.5543254613876343,
+        "chunk_id": "doc_002_chunk_0000",
+        "doc_id": "doc_002",
+        "source": "doc_002.txt",
+        "chunk_index": 0,
+        "text": "Embedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。"
+      },
+      {
+        "rank": 2,
+        "score": 0.3207743763923645,
+        "chunk_id": "doc_001_chunk_0000",
+        "doc_id": "doc_001",
+        "source": "doc_001.txt",
+        "chunk_index": 0,
+        "text": "RAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。"
+      },
+      {
+        "rank": 3,
+        "score": 0.1564885973930359,
+        "chunk_id": "doc_003_chunk_0000",
+        "doc_id": "doc_003",
+        "source": "doc_003.txt",
+        "chunk_index": 0,
+        "text": "FAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。"
+      }
+    ],
+    "prompt": "你是一个严谨的知识库问答助手。\n\n请只根据【资料】回答【问题】。\n如果资料中没有足够信息，请回答：“资料中没有足够信息。”\n不要编造资料中不存在的内容。\n\n【资料】\n[资料 1]\nsource: doc_002.txt\nchunk_id: doc_002_chunk_0000\nscore: 0.5543\ncontent:\nEmbedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。\n\n================================================================================\n\n[资料 2]\nsource: doc_001.txt\nchunk_id: doc_001_chunk_0000\nscore: 0.3208\ncontent:\nRAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。\n\n================================================================================\n\n[资料 3]\nsource: doc_003.txt\nchunk_id: doc_003_chunk_0000\nscore: 0.1565\ncontent:\nFAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。\n\n【问题】\nEmbedding 是什么？\n\n【回答要求】\n1. 回答必须基于资料。\n2. 回答要简洁、准确。\n3. 回答后列出引用来源 chunk_id。\n",
+    "answer": "Embedding 是把文本转换成向量的过程。资料来源为 [资料 1]。"
+  },
+  {
+    "query": "Mini-RAG 怎么工作的？",
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "score": 0.38688039779663086,
+        "chunk_id": "doc_003_chunk_0000",
+        "doc_id": "doc_003",
+        "source": "doc_003.txt",
+        "chunk_index": 0,
+        "text": "FAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。"
+      },
+      {
+        "rank": 2,
+        "score": 0.37558090686798096,
+        "chunk_id": "doc_001_chunk_0000",
+        "doc_id": "doc_001",
+        "source": "doc_001.txt",
+        "chunk_index": 0,
+        "text": "RAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。"
+      },
+      {
+        "rank": 3,
+        "score": 0.25632235407829285,
+        "chunk_id": "doc_002_chunk_0000",
+        "doc_id": "doc_002",
+        "source": "doc_002.txt",
+        "chunk_index": 0,
+        "text": "Embedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。"
+      }
+    ],
+    "prompt": "你是一个严谨的知识库问答助手。\n\n请只根据【资料】回答【问题】。\n如果资料中没有足够信息，请回答：“资料中没有足够信息。”\n不要编造资料中不存在的内容。\n\n【资料】\n[资料 1]\nsource: doc_003.txt\nchunk_id: doc_003_chunk_0000\nscore: 0.3869\ncontent:\nFAISS 是 Facebook AI Research 开源的向量检索库。\n\n在 Mini-RAG 项目中，FAISS 可以用来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。\n\nFAISS 本身主要保存向量索引，chunk 的原文内容、来源文件、chunk_id 等 metadata 通常需要额外保存。\n\n================================================================================\n\n[资料 2]\nsource: doc_001.txt\nchunk_id: doc_001_chunk_0000\nscore: 0.3756\ncontent:\nRAG 是 Retrieval-Augmented Generation 的缩写，中文通常称为检索增强生成。\n\nRAG 的核心思想是：在大模型生成答案之前，先从外部知识库中检索相关资料，然后把这些资料和用户问题一起放入 prompt 中，让大模型基于资料回答。\n\nRAG 适合企业知识库问答、政策制度查询、技术文档问答、客服问答等场景。\n\n================================================================================\n\n[资料 3]\nsource: doc_002.txt\nchunk_id: doc_002_chunk_0000\nscore: 0.2563\ncontent:\nEmbedding 是把文本转换成向量的过程。\n\n在 RAG 系统中，文档 chunk 和用户 query 都会被 embedding 模型编码成向量。然后系统通过余弦相似度或内积计算 query 和 chunk 的语义相似度。\n\n如果 query 和某个 chunk 语义接近，它们在向量空间中的距离通常也会更近。\n\n【问题】\nMini-RAG 怎么工作的？\n\n【回答要求】\n1. 回答必须基于资料。\n2. 回答要简洁、准确。\n3. 回答后列出引用来源 chunk_id。\n",
+    "answer": "Mini-RAG 使用 FAISS 来保存所有 chunk 的 embedding，并根据用户 query 的 embedding 快速检索最相似的 chunk。具体来说：\n\n- **使用 FAISS**：FAISS 被用作向量索引来存储 chunk 的 embedding。\n- **检索机制**：当用户输入查询时，首先将查询的 embedding 与所有 chunk 的 embedding 进行比较，找到最相似的 chunk。\n- **metadata 保存**：虽然 FAISS 主要用于保存向量索引，但实际应用中还需要额外保存 chunk 的原文内容、来源文件、chunk_id 等 metadata。\n\n引用来源：\n- [资料 1]：doc_003_chunk_0000"
+  }
+]

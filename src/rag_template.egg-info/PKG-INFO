@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: rag-template
+Version: 0.1.0
+Summary: A minimal RAG framework.
+Requires-Python: >=3.10
