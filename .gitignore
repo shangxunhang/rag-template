@@ -1,28 +1,36 @@
 __pycache__/
 *.pyc
 .venv/
-venv/
+.env
+
+# IDE
 .idea/
 .vscode/
 
-data/raw/
-data/processed/
-datasets/
-
-vector_store/
-*.faiss
-*.index
-
+# Logs
 logs/
 *.log
 
-checkpoints/
-outputs/
-runs/
-*.pt
-*.pth
+# Model files
+models/
+.cache/
 *.bin
 *.safetensors
 
-.env
-.cache/
+# Milvus Lite / local db
+*.db
+*.db-shm
+*.db-wal
+
+# Runtime outputs
+data/raw/
+data/processed/
+data/runs/
+data/vector_store/
+data/vector_index/
+data/processed/runs/
+data/processed/eval_reports/
+
+# Keep eval set
+!data/eval_set/
+!data/eval_set/*.jsonl

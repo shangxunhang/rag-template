@@ -2,7 +2,7 @@
 from typing import Dict, List
 
 from rag_template.chunker.base_chunker import BaseChunker
-from rag_template.util.schema_builder import build_chunk
+from rag_template.schema.Chunk_Schema import build_chunk
 from rag_template.util.text_utils import split_text_by_fixed_size
 
 

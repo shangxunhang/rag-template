@@ -76,10 +76,10 @@ def save_chunk_meta(chunks: List[Dict], file_path: Path) -> None:
 
 def load_chunks(file_path: Path) -> List[Dict]:
     """
-    读取 chunks.json。
+    读取 chunks_old.json。
 
     Args:
-        file_path: chunks.json 路径
+        file_path: chunks_old.json 路径
 
     Returns:
         chunk 列表

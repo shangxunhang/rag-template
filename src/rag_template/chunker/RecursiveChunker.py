@@ -4,7 +4,7 @@ from __future__ import annotations
 from typing import Dict, List, Optional, Tuple
 
 from rag_template.chunker.base_chunker import BaseChunker
-from rag_template.util.schema_builder import build_chunk
+from rag_template.schema.Chunk_Schema import build_chunk
 from rag_template.util.token_utils import TokenCounter, get_default_token_counter
 
 

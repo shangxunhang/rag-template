@@ -91,7 +91,7 @@ PROCESSED_DATA_DIR = DATA_DIR / "processed"
 # =========================
 
 DOCUMENTS_FILE = PROCESSED_DATA_DIR / "documents.json"
-CHUNKS_FILE = PROCESSED_DATA_DIR / "chunks.json"
+CHUNKS_FILE = PROCESSED_DATA_DIR / "chunks_old.json"
 
 
 # =========================

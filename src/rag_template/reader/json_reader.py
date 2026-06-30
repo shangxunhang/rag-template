@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 
 from rag_template.reader.base_reader import BaseReader
-from rag_template.util.schema_builder import build_document
+from rag_template.schema.document_schema import build_document
 
 
 class JsonReader(BaseReader):

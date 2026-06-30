@@ -25,7 +25,7 @@ Milvus Lite 检索器模块。
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from rag_template.vector_store.milvus_lite_store import MilvusLiteStore
+from rag_template.vector_store.milvus_chunk_store import MilvusLiteStore
 
 
 class MilvusRetriever:

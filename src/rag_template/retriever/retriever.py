@@ -23,7 +23,7 @@ import faiss
 import numpy as np
 
 from rag_template.Index.indexer import load_faiss_index, load_chunk_meta
-from rag_template.util.schema_builder import build_retrieval_result
+from rag_template.schema.Retrieval_Result_Schema import build_retrieval_result
 
 
 class FaissRetriever:

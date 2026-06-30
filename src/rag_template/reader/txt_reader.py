@@ -20,7 +20,7 @@ from typing import List, Dict
 from datetime import datetime
 
 from rag_template.reader.base_reader import BaseReader
-from rag_template.util.schema_builder import build_document
+from rag_template.schema.document_schema import build_document
 
 
 class TxtReader(BaseReader):
